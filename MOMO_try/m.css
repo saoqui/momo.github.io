@@ -24,7 +24,7 @@ align-items: center; /*垂直置中*/
 	
 	.prodoct_tittle { width:50%;  margin: 0 auto;}
 
-	.prodoct_tittle img{width:95%; }
+	.prodoct_tittle img{width:100%; }
 	
 	.info{
 		min-width: 100%;
@@ -43,7 +43,7 @@ align-items: center; /*垂直置中*/
 
 .bannertitle{z-index: 999;
     position: absolute;
-    width: 99%;
+    width: 95%;
     top: 10vw;
     left: 2vw;
 }
