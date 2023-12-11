@@ -24,7 +24,7 @@ align-items: center; /*垂直置中*/
 	
 	.prodoct_tittle { width:50%;  margin: 0 auto;}
 
-	.prodoct_tittle img{width:100%; }
+	.prodoct_tittle img{width:95%; }
 	
 	.info{
 		min-width: 100%;
