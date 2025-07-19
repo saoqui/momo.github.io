@@ -1,0 +1,185 @@
+
+
+  <style>
+
+.aqua01{
+  align-items: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.aqua01__body {
+  position: relative;
+  z-index: 100;
+}
+
+.aqua01__bg {
+  background: #000;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.fade .aqua01__bg {
+  opacity: 0;
+}
+
+.aqua01:nth-child(2) .aqua01__bg {
+  background: #f00;
+}
+
+.aqua01:nth-child(3) {
+  color: #000;
+}
+
+.aqua01:nth-child(3) .aqua01__bg {
+  background-image: url(" https://d31xv78q8gnfco.cloudfront.net/media/image_clips/687a54c4b7bcb4000efc945d/original.jpg"); background-size: cover;
+}
+
+.aqua01:nth-child(4) {
+  color: #000;
+}
+.aqua01:nth-child(4) .aqua01__bg {
+   background-image: url(" https://d31xv78q8gnfco.cloudfront.net/media/image_clips/687a54c4028997001809a46d/original.jpg"); background-size: cover;
+}
+
+.aqua01:nth-child(5) .aqua01__bg {
+  background-image: url(" https://d31xv78q8gnfco.cloudfront.net/media/image_clips/687a54c4a21aac0012989180/original.jpg"); background-size: cover;
+}
+</style>
+
+
+
+
+<div id="video-hero2">
+
+<div class="aqua01">
+    <div class="aqua01__bg"></div>
+    <div class="aqua01__body">
+        <p>aqua01 1</p>
+    </div>
+</div >
+<div   class="aqua01 fade" data-scrollama-index="0" data-height="537">
+    <div class="aqua01__bg"></div>
+    <div class="aqua01__body">
+        <p>aqua01 2</p>
+    </div>
+</div  >
+<div  class="aqua01 fade" data-scrollama-index="1" data-height="1342">
+    <div class="aqua01__bg"></div>
+    <div class="aqua01__body">
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+        <p>aqua01 3</p>
+    </div>
+</div >
+<div   class="aqua01 fade" data-scrollama-index="2" data-height="537">
+    <div class="aqua01__bg"></div>
+    <div class="aqua01__body">
+        <p>aqua01 4</p>
+    </div>
+</div>
+<div   class="aqua01 fade" data-scrollama-index="3" data-height="537">
+    <div class="aqua01__bg"></div>
+    <div class="aqua01__body">
+        <p>aqua01 5</p>
+    </div >
+	
+</div>
+
+</div >
+
+   
+<script src="https://unpkg.com/scrollama"></script>
+      <script >
+// initialize the scrollama
+const stepSelector = '.fade';
+const scroller = scrollama();
+let windowHeight = window.innerHeight;
+const steps = document.querySelectorAll(stepSelector);
+
+function handleStepProgress(response) {
+  const el = response.element;
+  const bg = el.querySelector('.aqua01__bg');
+  const height = el.getAttribute('data-heights') ? el.getAttribute('data-heights') : el.clientHeight;
+  const multiplier = height > windowHeight ? height / windowHeight : 1;
+
+  console.log(height);
+
+  bg.style.opacity = response.progress * multiplier;
+}
+
+function resize() {
+  windowHeight = window.innerHeight;
+
+  steps.forEach(el => {
+    el.setAttribute('data-height', el.clientHeight);
+  });
+
+  scroller.resize();
+}
+
+function init() {
+  // 1. setup the scroller with the bare-bones settings
+  // this will also initialize trigger observations
+  // 3. bind scrollama event handlers (this can be chained like below)
+  scroller.setup({
+    step: stepSelector,
+    progress: true,
+    offset: 1 }).
+
+  onStepProgress(handleStepProgress);
+
+  // setup resize event
+  resize();
+  window.addEventListener('resize', resize);
+}
+
+// kick things off
+init();
+//# sourceURL=pen.js
+    </script>
+
+
